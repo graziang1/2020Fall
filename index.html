@@ -9,12 +9,17 @@
 <body>
     <h1>This is my test page</h1>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="main.js"></script</script>
     <script>
-        var a = "New Paltz"
+        $(function()){
+            var size = 36;
+            $("h1").click(function(){
+                size +=5;
+                $("h1").css({ fontSize: size });
+            });
+        }
     </script>
-    <script>
-        alert(" goodbye " +b)
-    </script>
+
 </body>
 </html>
