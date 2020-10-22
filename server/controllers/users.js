@@ -4,6 +4,7 @@ const router = express.Router();
  //these routes will be attached to a greater program
 
 router.get('/', (req, res) => { //anyone who comes to this controller and wants to get info, theres a function
+        throw { status: 501, message: "This is a fake error" }
         res.send( users.getAll() );
     })
     .get('/search', (req, res) => {
