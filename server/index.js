@@ -11,6 +11,9 @@ app.get('/', (req, res, next) => {
 
 //add to the pipeline: if it matches ./users, then it'll be passed to the users controller
 //mount the users controller at users
+app.use('/users', users);
+
+//error handler
 app.use((err, req, res, next) =>{
   console.log(err);
   res.status(err.status || 500).send( { message: err.message } )

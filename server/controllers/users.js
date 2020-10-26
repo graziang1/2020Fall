@@ -16,6 +16,13 @@ router.get('/', (req, res, next) => { //anyone who comes to this controller and 
             res.send( newUser ); //returns new user
         }).catch(next)
     })
+    /*
+    .get('/rand', (req, res, next) => {
+        users.rand()
+        .then(someVal => res.send({someVal}))
+        .catch(next); //send object with a someVal property random # to client
+    })
+    */
 
 module.exports = router;  //when this file is required, you'll get this router (return obj from file)
 
