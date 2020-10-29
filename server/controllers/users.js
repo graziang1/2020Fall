@@ -3,8 +3,13 @@ const users = require('../models/users');
 const router = express.Router();
  //these routes will be attached to a greater program
 
-router.get('/', (req, res, next) => { //anyone who comes to this controller and wants to get info, theres a function
+router
+    .get('/', (req, res, next) => { //anyone who comes to this controller and wants to get info, theres a function
         users.getAll().then(x=> res.send( x ) )
+        .catch(next);
+    })
+    .get('/types', (req, res, next) => {
+        users.getTypes(req.query.q).then(x=> res.send( x ) )
         .catch(next);
     })
     .get('/search', (req, res, next) => {
