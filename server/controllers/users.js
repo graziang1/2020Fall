@@ -8,7 +8,12 @@ router
         users.getAll().then(x=> res.send( x ) )
         .catch(next);
     })
-    
+    .get('/:id', (req, res, next) => { 
+        const id = +req.params.id; //+ converts id to a number
+        if(!id) return next(); //if id is not a number, try another function on the pipeline
+        users.get(id).then(x=> res.send( x ) )
+        .catch(next);
+    })
     .get('/types', (req, res, next) => {
         users.getTypes(req.query.q).then(x=> res.send( x ) )
         .catch(next);
