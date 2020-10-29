@@ -8,6 +8,7 @@ router
         users.getAll().then(x=> res.send( x ) )
         .catch(next);
     })
+    
     .get('/types', (req, res, next) => {
         users.getTypes(req.query.q).then(x=> res.send( x ) )
         .catch(next);

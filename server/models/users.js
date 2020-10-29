@@ -1,6 +1,6 @@
 const mysql = require('./mysql');
 
-const data = [{ name: 'Moshe', age: 43}, { name: 'Biden', age: 78 }] //array of objects
+//const data = [{ name: 'Moshe', age: 43}, { name: 'Biden', age: 78 }] //array of objects
 
 async function getAll(){
     //throw { status: 501, message: "This is a fake error" }
@@ -27,5 +27,6 @@ async function rand(){ // or use a callback function, cb
     return someVal; 
 }
 */
+const search = async q => await mysql.query(`SELECT id, FirstName, LastName, FROM Users WHERE LastName LIKE '%${q}%' OR LIKE '%${q}%';`)
 
-module.exports = { getAll, add, getTypes, search: async q => data.filter(x=> x.name == q) }
+module.exports = { getAll, add, getTypes, search }
