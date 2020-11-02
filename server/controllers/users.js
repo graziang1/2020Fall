@@ -9,7 +9,7 @@ router
         .catch(next);
     })
     .get('/:id', (req, res, next) => { 
-        const id = +req.params.id; //+ converts id to a number
+        const id = +req.params.id; //+ converts id to a number request a parameter
         if(!id) return next(); //if id is not a number, try another function on the pipeline
         users.get(id).then(x=> res.send( x ) )
         .catch(next);
@@ -23,17 +23,31 @@ router
         .catch(next);
     })
     .post('/', (req, res, next) => {
-        users.add(req.query.name, req.query.age ).then(newUser => { //creates new user
+        users.add(
+            req.body.FirstName, 
+            req.body.LastName,
+            req.body.DOB,
+            req.body.Password,
+            6 /*User Type*/,
+        ).then(newUser => { //creates new user
             res.send( newUser ); //returns new user
         }).catch(next)
     })
-    /*
-    .get('/rand', (req, res, next) => {
-        users.rand()
-        .then(someVal => res.send({someVal}))
-        .catch(next); //send object with a someVal property random # to client
+    .put('/:id', (req, res, next) => {
+        users.update( req.params.id,
+            req.body.FirstName, 
+            req.body.LastName,
+            req.body.DOB,
+            req.body.Password,
+            6 /*User Type*/,
+        ).then(newUser => { //creates new user
+            res.send( newUser ); //returns new user
+        }).catch(next)
     })
-    */
-
+    .delete('/:id', (req, res, next) => {
+        users.remove( req.params.id).then(msg => { //creates new user
+            res.send( msg ); //returns new user
+        }).catch(next)
+    })
 module.exports = router;  //when this file is required, you'll get this router (return obj from file)
 
