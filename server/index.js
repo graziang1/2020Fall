@@ -1,5 +1,5 @@
 const express = require('express');
-
+const path = require('path');
 require('dotenv').config(); //to utilize the .env file with the new port #
 
 const users = require('./controllers/users'); //makes users a controller
@@ -35,7 +35,7 @@ app.get('/hello', (req, res, next) => {
 app.use('/users', users);
 
 app.get('*', (req, res, next) => {
-  const filename = path.join(__dirname + '//../docs/index.html');
+  const filename = path.join(__dirname + '/../docs/index.html');
   console.log(filename);
   res.sendFile( filename );
 })
