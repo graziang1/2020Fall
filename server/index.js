@@ -14,7 +14,7 @@ console.log(process.env.BEST_CLASS);
 //creates a pipeline
 //Middleware
 app.use(express.json()); 
-app.use(express.static(__dirname + '../docs')); //will serve files straight off your computer (hosting static files)
+app.use(express.static(__dirname + '/../docs')); //will serve files straight off your computer (hosting static files)
 
 //Authentication/Authorization
 app.use(function(req, res, next) {
