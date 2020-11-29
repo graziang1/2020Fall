@@ -122,6 +122,7 @@ export default {
 
 
 <style>
+    
     .button {
         margin: 3px;
     }
