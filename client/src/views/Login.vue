@@ -53,6 +53,7 @@ export default {
             session.addNotification('Yay! You logged in', 'success')
             this.$router.push('feed')
         },
+        //callback syntax - body of function called when we're done
         fbLogin(){
             FB.login( authInfo =>{
                 console.log(authInfo);
@@ -84,10 +85,10 @@ export default {
     }
 }
 ///////////////////////////////////
-//  Load facebook scripts
+//  Load Facebook Scripts
   window.fbAsyncInit = function() {
     FB.init({
-      appId      : '864177661004843',
+      appId      : '82709976725907781',
       cookie     : true,
       xfbml      : true,
       version    : 'v9.0'
@@ -112,7 +113,7 @@ export default {
             // the global gapi variable is created by loading that script
             gapi.load('auth2', () => {
                 auth2 = gapi.auth2.init({
-                    client_id: "69162742167-oo4oe777cjfues67332npkpss244ktga.apps.googleusercontent.com",
+                    client_id: "929046569534-c1bfkllm7vg2l269tki85r2857ulgm1v.apps.googleusercontent.com",
                     cookiepolicy: 'single_host_origin',
                     scope: 'profile email'
                 })
