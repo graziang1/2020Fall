@@ -113,7 +113,7 @@ export default {
             // the global gapi variable is created by loading that script
             gapi.load('auth2', () => {
                 auth2 = gapi.auth2.init({
-                    client_id: "929046569534-c1bfkllm7vg2l269tki85r2857ulgm1v.apps.googleusercontent.com",
+                    client_id: "2709976725907781",
                     cookiepolicy: 'single_host_origin',
                     scope: 'profile email'
                 })

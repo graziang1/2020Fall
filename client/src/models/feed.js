@@ -15,7 +15,7 @@ export function react(post_id){
 export function comment(post_id, text){
     return myFetch('comments', { Post_id: post_id, Owner_id: 1, Text: text })
 }
-/*
+
 export const posts = [
     {
         url: 'https://external-lga3-1.xx.fbcdn.net/safe_image.php?d=AQCUrZKvWahGsR6c&w=500&h=261&url=https%3A%2F%2Fstatic01.nyt.com%2Fimages%2F2020%2F10%2F04%2Fworld%2F04germany-attack%2F04germany-attack-facebookJumbo.jpg&cfs=1&ext=jpg&_nc_cb=1&_nc_hash=AQBlkXr-6JBttoqp',
@@ -45,4 +45,3 @@ export const posts = [
         }
     },
 ];
-*/
