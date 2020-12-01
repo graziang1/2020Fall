@@ -41,7 +41,8 @@ export default {
     data(){
         return {
             posts: [],
-            fbPics: []
+            fbPics: [],
+            posts
         }
     },
     async created(){
